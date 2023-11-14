@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bee5omqk3f6n5"]
+
+[ext_resource type="Script" path="res://GCVG/gcvg_main.gd" id="1_xwu24"]
+[ext_resource type="Script" path="res://GCVG/gcvg_view.gd" id="2_kxh8a"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_xwu24")
+
+[node name="View" type="Node2D" parent="."]
+script = ExtResource("2_kxh8a")

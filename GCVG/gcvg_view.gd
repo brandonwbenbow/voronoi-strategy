@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var randSeed:int
+@export var randSeed: int = randi()
 
 # Declare member variables here. Examples:
 # var a = 2

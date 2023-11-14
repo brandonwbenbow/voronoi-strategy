@@ -1,11 +1,11 @@
 extends Node;
 
-@export var randomSeed: int;
-@export var widthPerChunk: int = 5;
-@export var heightPerChunk: int = 5;
-@export var distBtwPoints: float = 30;
-@export var distBtwVariation: float = .3;
-@export var voronoiTolerance: float = .3;
+@export var randomSeed: int = randi();
+@export var widthPerChunk: int = 4;
+@export var heightPerChunk: int = 8;
+@export var distBtwPoints: float = 60;
+@export var distBtwVariation: float = 1;
+@export var voronoiTolerance: float = 1;
 
 var view;
 
@@ -120,10 +120,8 @@ func displayVornoiFromChunk(chunkLoc:Vector2):
 	pass
 
 func _ready():
+	print("Seed: %d" % randomSeed)
 	for w in 10:
 		for h in 10:
-			if (w == 5 && h == 5):
-				null;
-			else:
-				displayVornoiFromChunk(Vector2(w, h));
+			displayVornoiFromChunk(Vector2(w, h));
 	pass;
