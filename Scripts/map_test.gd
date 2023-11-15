@@ -10,4 +10,4 @@ func _process(delta):
 	pass
 
 func InsidePolygon(point: Vector2, polygon: PackedVector2Array):
-	return if Geometry2D.is_point_in_polygon(point, polygon)
+	return Geometry2D.is_point_in_polygon(point, polygon)

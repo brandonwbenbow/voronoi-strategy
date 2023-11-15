@@ -2,10 +2,10 @@ extends Node;
 
 @export var randomSeed: int = randi();
 @export var widthPerChunk: int = 4;
-@export var heightPerChunk: int = 8;
-@export var distBtwPoints: float = 60;
+@export var heightPerChunk: int = 4;
+@export var distBtwPoints: float = 40;
 @export var distBtwVariation: float = 1;
-@export var voronoiTolerance: float = 1;
+@export var voronoiTolerance: float = 0.8;
 
 var view;
 
@@ -121,7 +121,7 @@ func displayVornoiFromChunk(chunkLoc:Vector2):
 
 func _ready():
 	print("Seed: %d" % randomSeed)
-	for w in 10:
-		for h in 10:
+	for w in 20:
+		for h in 20:
 			displayVornoiFromChunk(Vector2(w, h));
 	pass;
