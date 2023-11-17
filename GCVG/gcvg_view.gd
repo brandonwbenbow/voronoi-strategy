@@ -15,10 +15,6 @@ func displayPoints(offset: Vector2, points: PackedVector2Array, color: Color = C
 	pass
 
 func displayPolygon(offset: Vector2, polygon: PackedVector2Array):
-	var area = CollisionPolygon2D.new();
-	area.set_script(load("res://Scripts/AreaClick.gd"))
-	area.set_process_input(true)
-	
 	var newPoly = Polygon2D.new();
 	var newPolyPoints = PackedVector2Array();
 	for point in polygon:
@@ -29,9 +25,17 @@ func displayPolygon(offset: Vector2, polygon: PackedVector2Array):
 	newPoly.color = Color(randGen.randf(), randGen.randf(), randGen.randf(), 1);
 	randSeed = randGen.randi();
 	
-	area.add_child(newPoly);
-#	newPoly.add_child(area);
-	add_child(area);
+	var poly = CollisionPolygon2D.new()
+	poly.polygon = newPolyPoints
+	
+#	var area = Area2D.new()
+#	var owner_id = create_shape_owner(poly)
+#	area.shape_owner_add_shape(owner_id, poly)
+#	area.set_pickable(true)
+	
+#	newPoly.add_child(poly);
+	add_child(newPoly);
+#	add_child(area);
 	pass
 # Called when the node enters the scene tree for the first time.
 func _ready():
